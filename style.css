@@ -13,13 +13,15 @@ html {
 }
 
 li {
-  /* ??? */
+  list-style-type: none;
 }
 
 /* Layout */
 
 .container {
-  /* ??? */
+  /* margin: 0 auto; */
+  display: flex;
+  flex-direction: column;
   max-width: 1600px; /* 4 x image */
 }
 
@@ -39,12 +41,9 @@ h1 {
 
 /* Gallery */
 
-/*
-??? {
-  ???
-  ???
+.gallery ul {
+  display: flex;
 }
-*/
 
 /* Keep image proportions on resize */
 img {
@@ -52,19 +51,25 @@ img {
   height: auto;
   display: block;
 }
-
+@media screen and (max-width: 399px) {
+  ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 /*
 When there's room for more than 1 column of 400px-wide images,
 change the layout of the gallery to show 2 columns
 */
-@media screen and (min-width: 400px) {
+
+@media screen and (min-width: 400px) and (max-width: 599px) {
   ul {
-    /* ??? */
-    /* ??? */
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   li {
-    /* ??? */
+    width: 50%;
   }
 }
 
@@ -72,7 +77,11 @@ change the layout of the gallery to show 2 columns
 When there's room for more than 2 columns,
 change the layout of the gallery to show 3 columns
 */
-@media screen and (min-width: /* ??? */) {
+@media screen and (min-width: 600px) and (max-width: 768px) {
+  ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
   li {
     width: calc(100% / 3);
   }
@@ -84,3 +93,12 @@ change the layout of the gallery to show 4 columns
 */
 
 /* ??? Write your own. You got this :) */
+@media screen and (min-width: 769px) {
+  ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  li {
+    width: 25%;
+  }
+}
