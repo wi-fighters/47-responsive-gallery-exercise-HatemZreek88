@@ -1,7 +1,7 @@
 /* Resets */
 
 * {
-  font-family: sans-serif;
+  font-family: "Lilita One", cursive, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -37,7 +37,6 @@ h1 {
   border-bottom: 4px solid #f4d143;
 }
 
-
 /* Gallery */
 
 /*
@@ -59,7 +58,6 @@ When there's room for more than 1 column of 400px-wide images,
 change the layout of the gallery to show 2 columns
 */
 @media screen and (min-width: 400px) {
-
   ul {
     /* ??? */
     /* ??? */
