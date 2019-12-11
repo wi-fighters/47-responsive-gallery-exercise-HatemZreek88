@@ -1,9 +1,10 @@
 /* Resets */
-
 * {
+  box-sizing: border-box;
+}
+body {
   font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
   margin: 0;
-  padding: 0;
 }
 
 html {
@@ -12,17 +13,13 @@ html {
   background-color: #0e2431;
 }
 
-li {
-  list-style-type: none;
-}
-
 /* Layout */
 
-.container {
+.header {
   /* margin: 0 auto; */
   display: flex;
   flex-direction: column;
-  max-width: 1600px; /* 4 x image */
+  max-width: 1600px; /*4 x image*/
 }
 
 /* Description */
@@ -41,64 +38,14 @@ h1 {
 
 /* Gallery */
 
-.gallery ul {
-  display: flex;
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 1rem;
 }
 
 /* Keep image proportions on resize */
 img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
   display: block;
-}
-@media screen and (max-width: 399px) {
-  ul {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-/*
-When there's room for more than 1 column of 400px-wide images,
-change the layout of the gallery to show 2 columns
-*/
-
-@media screen and (min-width: 400px) and (max-width: 599px) {
-  ul {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  li {
-    width: 50%;
-  }
-}
-
-/*
-When there's room for more than 2 columns,
-change the layout of the gallery to show 3 columns
-*/
-@media screen and (min-width: 600px) and (max-width: 768px) {
-  ul {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  li {
-    width: calc(100% / 3);
-  }
-}
-
-/*
-When there's room for more than 3 columns,
-change the layout of the gallery to show 4 columns
-*/
-
-/* ??? Write your own. You got this :) */
-@media screen and (min-width: 769px) {
-  ul {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  li {
-    width: 25%;
-  }
 }
